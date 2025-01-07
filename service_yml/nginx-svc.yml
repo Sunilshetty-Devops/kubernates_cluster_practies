@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: deploy-nginx  # Update if you are using a different namespace
+spec:
+  selector:
+    app: nginx  # Must match the labels in the Deployment
+  ports:
+    - protocol: TCP
+      port: 80         # Port exposed by the Service
+      targetPort: 80   # Port exposed by the Nginx container
+      nodePort: 30001  # NodePort to access the Service (for NodePort type)
+  type: NodePort        # Choose NodePort, ClusterIP, or LoadBalancer based on your need
+

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy3
+  name: deploy3
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: deploy3
+  type: LoadBalancer
+status:
+  loadBalancer: {}
+  containers:
+  - name: p3
+    image: nginx:latest
+    ports:
+    - containerPort: 9090
