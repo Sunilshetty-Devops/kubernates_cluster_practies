@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: p13
+  name: p13
+  namespace: amazon
+spec:
+  containers:
+  - image: sunilshetty123/amazon_version:3.0
+    name: p13
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

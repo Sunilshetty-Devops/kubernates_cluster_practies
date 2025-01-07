@@ -1,0 +1,25 @@
+# Create Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infy
+
+---
+
+# Create Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: demo1
+  name: demo1
+  namespace: infy
+spec:
+  containers:
+  - image: adikarthik/demo
+    name: demo1
+    ports:
+    - containerPort: 9090
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+
