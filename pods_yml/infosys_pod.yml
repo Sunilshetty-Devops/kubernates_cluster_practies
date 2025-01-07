@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: demo1
+  name: demo1
+  namespace: infosys
+spec:
+  containers:
+  - image: adikarthik/demo
+    name: demo1
+    ports:
+    - containerPort: 9090
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+
